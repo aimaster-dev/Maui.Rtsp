@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Ctrls="clr-namespace:Maui.Rtsp.Controls"
+             x:Class="Maui.Rtsp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="15,0"
+            Spacing="20">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="160"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Hello, Camera!"
+                Style="{StaticResource Headline}"
+                FontSize="25" />
+            <Entry x:Name="txtUrl" Placeholder="Url" Text="rtsp://70.41.96.204:554"/>
+            <Entry x:Name="txtUser" Placeholder="Username" Text="admin"/>
+            <Entry x:Name="txtPassword" Placeholder="Password" Text="Korgi123"/>
+            <Button
+                x:Name="btnCheck"
+                Text="Check device" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnbtnCheckClicked"
+                HorizontalOptions="Fill" />
+
+            <Ctrls:CameraView x:Name="cameraView" Url="rtsp://admin:Korgi123@70.41.96.204:554/" HorizontalOptions="FillAndExpand"
+                              HeightRequest="200" User="" Password="">
+
+            </Ctrls:CameraView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
